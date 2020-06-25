@@ -1,0 +1,17 @@
+C:\Users\Am\source\repos\Student Management System\bin\Debug\Student Management System.exe.config
+C:\Users\Am\source\repos\Student Management System\bin\Debug\Student Management System.exe
+C:\Users\Am\source\repos\Student Management System\bin\Debug\Student Management System.pdb
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student_Management_System.Form1.resources
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student_Management_System.Properties.Resources.resources
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student_Management_System.Student_Detail.resources
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student Management System.csproj.GenerateResource.cache
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student Management System.csproj.CoreCompileInputs.cache
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student Management System.exe
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student Management System.pdb
+C:\Users\Am\source\repos\Student Management System\bin\Debug\EntityFramework.dll
+C:\Users\Am\source\repos\Student Management System\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Am\source\repos\Student Management System\bin\Debug\EntityFramework.xml
+C:\Users\Am\source\repos\Student Management System\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student Management System.csproj.CopyComplete
+C:\Users\Am\source\repos\Student Management System\bin\Debug\Student_Info.mdf
+C:\Users\Am\source\repos\Student Management System\bin\Debug\Student_Info_log.ldf
