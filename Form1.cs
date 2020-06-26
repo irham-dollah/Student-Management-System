@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace Student_Management_System
 {
@@ -46,11 +47,10 @@ namespace Student_Management_System
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*dataGridView1.DataSource = null;
-            dataGridView1.DataSource = db.StudentDetails.Local;
-            dataGridView1.Update();
-            dataGridView1.Refresh();*/
-            Application.Restart();
+            //InitializeComponent();
+            //menuStrip1.Renderer = new MyRenderer();
+            //db.StudentTables.Load();
+            //studentTableBindingSource.DataSource = db.StudentTables.Local;
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,16 +71,12 @@ namespace Student_Management_System
             sd.Show();
         }
 
-        //Student_InfoEntities db = new Student_InfoEntities();
+        Student_DetailEntities db = new Student_DetailEntities();
         private void Form1_Load(object sender, EventArgs e)
         {
-            //db.Tables.Load();
-            //stude = db.Tables.Local;
+            db.StudentTables.Load();
+            studentTableBindingSource.DataSource = db.StudentTables.Local;
         }
 
-        private void studentDetailBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

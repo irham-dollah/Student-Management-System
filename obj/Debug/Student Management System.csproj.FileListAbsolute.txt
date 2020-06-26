@@ -15,3 +15,4 @@ C:\Users\Am\source\repos\Student Management System\bin\Debug\EntityFramework.Sql
 C:\Users\Am\source\repos\Student Management System\obj\Debug\Student Management System.csproj.CopyComplete
 C:\Users\Am\source\repos\Student Management System\bin\Debug\Student_Info.mdf
 C:\Users\Am\source\repos\Student Management System\bin\Debug\Student_Info_log.ldf
+C:\Users\Am\source\repos\Student Management System\obj\Debug\Student Management System.csprojAssemblyReference.cache

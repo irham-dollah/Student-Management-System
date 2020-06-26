@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -40,6 +41,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.studentTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,6 +56,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentTableBindingSource, "Student_ID", true));
             this.textBox1.Location = new System.Drawing.Point(151, 21);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(211, 20);
@@ -60,6 +64,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentTableBindingSource, "Student_Name", true));
             this.textBox2.Location = new System.Drawing.Point(151, 58);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(211, 20);
@@ -76,6 +81,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentTableBindingSource, "Address", true));
             this.textBox3.Location = new System.Drawing.Point(151, 94);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
@@ -93,6 +99,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.studentTableBindingSource, "Class", true));
             this.textBox4.Location = new System.Drawing.Point(151, 158);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(211, 20);
@@ -156,6 +163,10 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // studentTableBindingSource
+            // 
+            this.studentTableBindingSource.DataSource = typeof(Student_Management_System.StudentTable);
+            // 
             // Student_Detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +188,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Student_Detail";
             this.Text = "Student Detail";
+            ((System.ComponentModel.ISupportInitialize)(this.studentTableBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +208,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.BindingSource studentTableBindingSource;
     }
 }

@@ -80,12 +80,26 @@ namespace Student_Management_System
             }
             else
             {
-                con.Open();
-                SqlCommand sc = new SqlCommand("UPDATE studentTable SET Student_Name= '" + textBox2.Text + "', Address='" + textBox3.Text + "', Class='" + textBox4.Text + "' WHERE Student_ID='" + textBox1.Text + "'", con);
-                sc.ExecuteNonQuery();
-                MessageBox.Show("Student Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearTextBoxes();
-                con.Close();
+                using (SqlCommand sqlCommand = new SqlCommand("SELECT COUNT(*) from studentTable where student_id like @studentID", con))
+                {
+                    con.Open();
+                    sqlCommand.Parameters.AddWithValue("@studentID", textBox1.Text);
+                    int userCount = (int)sqlCommand.ExecuteScalar();
+                    if (userCount > 0)
+                    {
+                        SqlCommand sc = new SqlCommand("UPDATE studentTable SET Student_Name= '" + textBox2.Text + "', Address='" + textBox3.Text + "', Class='" + textBox4.Text + "' WHERE Student_ID='" + textBox1.Text + "'", con);
+                        sc.ExecuteNonQuery();
+                        MessageBox.Show("Student Updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearTextBoxes();
+                        con.Close();
+                    }
+                    else
+                    {
+                        con.Close();
+                        MessageBox.Show("The student not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ClearTextBoxes();
+                    }
+                }
             }
         }
 
@@ -97,15 +111,29 @@ namespace Student_Management_System
             }
             else
             {
-                con.Open();
-                SqlCommand sc = new SqlCommand("DELETE studentTable WHERE Student_ID='" + textBox1.Text + "'", con);
-                if (MessageBox.Show("Confirm Delete?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                using (SqlCommand sqlCommand = new SqlCommand("SELECT COUNT(*) from studentTable where student_id like @studentID", con))
                 {
-                    sc.ExecuteNonQuery();
-                    MessageBox.Show("Item Deleted", "Success");
-                    ClearTextBoxes();
+                    con.Open();
+                    sqlCommand.Parameters.AddWithValue("@studentID", textBox1.Text);
+                    int userCount = (int)sqlCommand.ExecuteScalar();
+                    if (userCount > 0)
+                    {
+                        SqlCommand sc = new SqlCommand("DELETE studentTable WHERE Student_ID='" + textBox1.Text + "'", con);
+                        if (MessageBox.Show("Confirm Delete?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            sc.ExecuteNonQuery();
+                            MessageBox.Show("Item Deleted", "Success");
+                            ClearTextBoxes();
+                        }
+                        con.Close();
+                    }
+                    else
+                    {
+                        con.Close();
+                        MessageBox.Show("The student not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ClearTextBoxes();
+                    }
                 }
-                con.Close();
             }
         }
 
